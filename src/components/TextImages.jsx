@@ -55,7 +55,7 @@ return (
         Click text to view code
       </p>
 
-      <div className="flex justify-center gap-x-20 gap-y-20 flex-wrap flex-col items-start mt-6">
+      <div className="flex justify-center gap-x-20 gap-y-20 flex-wrap  items-start mt-6">
         {[
           { imageUrl: nature, code: codeExamples[0], note: notes[0] },
           {
@@ -90,7 +90,7 @@ return (
             }
           >
             <div>
-              <p className="text-white font-bold">{note}</p>
+              <p className="text-blue-600 font-bold text-center">{note}</p>
               <TextImage
                 imageUrl={imageUrl}
                 pos={pos}
