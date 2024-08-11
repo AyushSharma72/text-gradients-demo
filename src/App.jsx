@@ -37,7 +37,7 @@ function App() {
           }
           key="2"
         >
-          <div className="w-full">
+          <div className="h-screen">
             <TextImage />
           </div>
         </TabPane>

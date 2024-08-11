@@ -11,18 +11,15 @@ body {
   min-height: 100vh;
   background-color: black;
 }
-
 .text {
-  font-size: 50px;
+  font-size: 25px;
   font-weight: 900;
 }
+
 .text2 {
-  font-size: 110px;
+  font-size: 50px;
   font-weight: bold;
   font-stretch: expanded;
-}
-.ant-popover-content p {
-  margin: 0;
 }
 
 /* .xyz {
@@ -36,7 +33,7 @@ body {
 
 .toggle-switch {
   position: fixed;
-  top: 8%;
+  top: 80%;
   left: 2%;
   width: 100px;
   height: 50px;
@@ -96,4 +93,21 @@ body {
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+@media (min-width: 640px) {
+  .text {
+    font-size: 50px;
+    font-weight: 900;
+  }
+  .text2 {
+    font-size: 80px;
+    font-weight: 900;
+  }
+
+  .toggle-switch {
+    position: fixed;
+    top: 8%;
+    left: 2%;
+  }
 }

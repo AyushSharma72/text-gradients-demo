@@ -66,7 +66,10 @@ const Textgradients = () => {
               </>
             }
           >
-            <GradientText className="text cursor-pointer" color={color}>
+            <GradientText
+              className="text cursor-pointer text-center"
+              color={color}
+            >
               {text}
             </GradientText>
           </Popover>
