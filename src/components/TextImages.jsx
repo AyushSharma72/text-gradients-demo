@@ -1,6 +1,6 @@
 import React from "react";
 import { Popover } from "antd";
-import { TextImage } from "text-gradients";
+import { TextImage } from "text-gradients"; // Adjust the import path as necessary
 import lightning from "../assets/light.jpeg";
 import nature from "../assets/nature.jpeg";
 import beach from "../assets/beach.jpeg";
@@ -41,7 +41,12 @@ return (
   </TextImage>
 );`,
   ];
-
+  const notes = [
+    `Basic usage`,
+    `you can add a "cover"(true or false) prop that completely covers the element's content box`,
+    `you can add a "pos" prop to adjust the placement of the image in the text`,
+    `usage of both "pos" and "cover"`,
+  ];
   const codeBlockStyle = "bg-gray-800 text-white p-4 rounded-md";
 
   return (
@@ -50,16 +55,33 @@ return (
         Click text to view code
       </p>
 
-      <div className="flex justify-center gap-x-20 flex-wrap flex-col items-start ">
+      <div className="flex justify-center gap-x-20 gap-y-20 flex-wrap flex-col items-start mt-6">
         {[
-          { imageUrl: nature, code: codeExamples[0] },
-          { imageUrl: lightning, code: codeExamples[1], cover: true },
-          { imageUrl: beach, code: codeExamples[2], pos: "50%" },
-          { imageUrl: lake, code: codeExamples[3], pos: "50%", cover: true },
-        ].map(({ imageUrl, code, pos, cover }, index) => (
+          { imageUrl: nature, code: codeExamples[0], note: notes[0] },
+          {
+            imageUrl: lightning,
+            code: codeExamples[1],
+            cover: true,
+            note: notes[1],
+          },
+          {
+            imageUrl: beach,
+            code: codeExamples[2],
+            pos: "50%",
+            note: notes[2],
+          },
+          {
+            imageUrl: lake,
+            code: codeExamples[3],
+            pos: "50%",
+            cover: true,
+            note: notes[3],
+          },
+        ].map(({ imageUrl, code, pos, cover, note }, index) => (
           <Popover
             key={index}
-            content={ 
+            trigger={"click"}
+            content={
               <div>
                 <pre className={codeBlockStyle}>
                   <code>{code}</code>
@@ -67,14 +89,17 @@ return (
               </div>
             }
           >
-            <TextImage
-              imageUrl={imageUrl}
-              pos={pos}
-              cover={cover}
-              className="text2 cursor-pointer"
-            >
-              TEXT IMAGES
-            </TextImage>
+            <div>
+              <p className="text-white font-bold">{note}</p>
+              <TextImage
+                imageUrl={imageUrl}
+                pos={pos}
+                cover={cover}
+                className="text2 cursor-pointer"
+              >
+                TEXT IMAGES
+              </TextImage>
+            </div>
           </Popover>
         ))}
       </div>
