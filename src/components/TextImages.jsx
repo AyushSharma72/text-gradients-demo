@@ -43,8 +43,8 @@ return (
   ];
   const notes = [
     `Basic usage`,
-    `you can add a "cover"(true or false) prop that completely covers the element's content box`,
-    `you can add a "pos" prop to adjust the placement of the image in the text`,
+    `usage of  "cover"(true or false) prop that completely covers the element's content box`,
+    ` usage of  "pos" prop to adjust the placement of the image in the text`,
     `usage of both "pos" and "cover"`,
   ];
   const codeBlockStyle = "bg-gray-800 text-white p-4 rounded-md";
@@ -89,8 +89,8 @@ return (
               </div>
             }
           >
-            <div>
-              <p className="text-blue-600 font-bold text-center">{note}</p>
+            <div className="flex flex-col justify-center items-center">
+              <p className="text-blue-600 font-bold text-center p-2">{note}</p>
               <TextImage
                 imageUrl={imageUrl}
                 pos={pos}

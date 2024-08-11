@@ -31,68 +31,72 @@ body {
   color: transparent;
 } */
 
-.toggle-switch {
+.my-body {
   position: fixed;
-  top: 80%;
   left: 2%;
-  width: 100px;
-  height: 50px;
-  --light: #d8dbe0;
-  --dark: #28292c;
-  --link: rgb(27, 129, 112);
-  --link-hover: rgb(24, 94, 82);
+  top: 5%;
 }
 
-.switch-label {
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  background-color: var(--dark);
-  border-radius: 25px;
+.darkThemeBtn * {
+  transition: all 0.3s;
+}
+
+.darkThemeBtn input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.darkThemeBtn label {
+  border: 1px solid #efefef;
+  background: rgba(239, 239, 239, 0.5);
+  border-radius: 10px;
+  height: 46px;
+  width: 46px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   cursor: pointer;
-  border: 3px solid var(--dark);
 }
 
-.checkbox {
-  position: absolute;
-  display: none;
+.darkThemeBtn label:active {
+  border-radius: 5px;
 }
 
-.slider {
+.darkThemeBtn label svg {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  -webkit-transition: 0.3s;
+  width: 16px;
   transition: 0.3s;
+  z-index: 1;
+  fill: #000;
 }
 
-.checkbox:checked ~ .slider {
-  background-color: var(--light);
+.darkThemeBtn label svg.sun {
+  width: 20px;
+  opacity: 0;
+  fill: #fff;
 }
 
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-  box-shadow: inset 12px -4px 0px 0px var(--light);
-  background-color: var(--dark);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.darkThemeBtn label svg.moon {
+  opacity: 1;
 }
 
-.checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  transform: translateX(50px);
-  background-color: var(--dark);
-  -webkit-box-shadow: none;
-  box-shadow: none;
+.darkThemeBtn input:checked + label {
+  background: #4a6cf7;
+}
+
+.darkThemeBtn input:checked + label svg.sun {
+  opacity: 1;
+}
+
+.darkThemeBtn input:checked + label svg.moon {
+  opacity: 0;
+}
+
+.darkThemeBtn input:checked ~ span {
+  background-color: #16174b;
 }
 
 @media (min-width: 640px) {
@@ -103,11 +107,5 @@ body {
   .text2 {
     font-size: 80px;
     font-weight: 900;
-  }
-
-  .toggle-switch {
-    position: fixed;
-    top: 8%;
-    left: 2%;
   }
 }

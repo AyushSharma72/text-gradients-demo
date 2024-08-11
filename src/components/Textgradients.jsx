@@ -44,7 +44,7 @@ const Textgradients = () => {
         Click on the gradient to view code
       </div>
 
-      <div className="flex flex-wrap gap-8 justify-center  items-center ">
+      <div className="flex flex-wrap gap-8 justify-center  items-center pb-10">
         {gradientTexts.map(({ color, text }) => (
           <Popover
             key={color}
