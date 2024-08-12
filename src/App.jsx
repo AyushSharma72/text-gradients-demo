@@ -2,25 +2,29 @@ import Textgradients from "./components/Textgradients";
 import TextImage from "./components/TextImages";
 import { Tabs } from "antd";
 import { Toaster } from "react-hot-toast";
+import { useTheme } from "./context/Theme";
 
 function App() {
   const { TabPane } = Tabs;
+  const { Theme, setTheme } = useTheme();
 
   function Changetheme() {
     const bodyElement = document.body;
     bodyElement.style.backgroundColor =
-      bodyElement.style.backgroundColor === "antiquewhite"
-        ? "black"
-        : "antiquewhite";
+      bodyElement.style.backgroundColor === "white" ? "black" : "white";
+    setTheme(!Theme);
   }
-
   return (
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
       <Tabs centered className="w-full">
         <TabPane
           tab={
-            <span className="text-blue-600 font-bold text-xl">
+            <span
+              className={`${
+                Theme ? "text-white" : "text-black"
+              } font-bold text-xl`}
+            >
               Text Gradients
             </span>
           }
@@ -33,7 +37,13 @@ function App() {
 
         <TabPane
           tab={
-            <span className="text-blue-600 font-bold text-xl ">Text Image</span>
+            <span
+              className={`${
+                Theme ? "text-white" : "text-black"
+              } font-bold text-xl`}
+            >
+              Text Image
+            </span>
           }
           key="2"
         >

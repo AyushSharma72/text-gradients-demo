@@ -2,8 +2,11 @@ import { Popover } from "antd";
 import toast from "react-hot-toast";
 import { FaCopy } from "react-icons/fa";
 import { GradientText } from "text-gradients";
+import { useTheme } from "../context/Theme";
 
 const Textgradients = () => {
+  const { Theme } = useTheme();
+
   const copyToClipboard = (text) => {
     try {
       navigator.clipboard.writeText(text).then(() => {
@@ -40,7 +43,11 @@ const Textgradients = () => {
   ];
   return (
     <>
-      <div className="text-blue-600 text-center font-bold">
+      <div
+        className={`${
+          Theme ? "text-white" : "text-black"
+        } text-center font-bold`}
+      >
         Click on the gradient to view code
       </div>
 

@@ -5,8 +5,11 @@ import lightning from "../assets/light.jpeg";
 import nature from "../assets/nature.jpeg";
 import beach from "../assets/beach.jpeg";
 import lake from "../assets/lake.jpeg";
+import { useTheme } from "../context/Theme";
 
 const TextImages = () => {
+  const { Theme } = useTheme();
+
   const codeExamples = [
     `import { TextImage } from "text-gradients";
 import nature from "../assets/nature.jpeg";
@@ -20,7 +23,8 @@ return (
 import lightning from "../assets/light.jpeg";
 
 return (
-  <TextImage imageUrl={lightning} cover={true}>
+  <TextImage imageUrl={lightning} 
+  cover={true}>
     TEXT IMAGES
   </TextImage>
 );`,
@@ -36,22 +40,29 @@ return (
 import lake from "../assets/lake.jpeg";
 
 return (
-  <TextImage imageUrl={lake} pos={"50%"} cover={true}>
+  <TextImage imageUrl={lake} 
+  pos={"50%"} cover={true}>
     TEXT IMAGES
   </TextImage>
 );`,
   ];
   const notes = [
     `Basic usage`,
-    `usage of  "cover"(true or false) prop that completely covers the element's content box`,
+    `usage of  "cover"(true or false) prop that completely
+      covers the element's content box`,
     ` usage of  "pos" prop to adjust the placement of the image in the text`,
     `usage of both "pos" and "cover"`,
   ];
+
   const codeBlockStyle = "bg-gray-800 text-white p-4 rounded-md";
 
   return (
     <>
-      <p className="text-blue-600 text-center font-bold">
+      <p
+        className={`${
+          Theme ? "text-white " : "text-black"
+        } text-center font-bold`}
+      >
         Click text to view code
       </p>
 
@@ -89,8 +100,18 @@ return (
               </div>
             }
           >
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-blue-600 font-bold text-center p-2">{note}</p>
+            <div
+              className={`flex flex-col justify-center items-center border  ${
+                Theme ? "border-white" : "border-black"
+              }  rounded-md p-3`}
+            >
+              <p
+                className={`${
+                  Theme ? "text-white" : "text-black"
+                } font-bold text-center p-2 flex flex-wrap`}
+              >
+                {note}
+              </p>
               <TextImage
                 imageUrl={imageUrl}
                 pos={pos}
