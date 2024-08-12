@@ -66,7 +66,7 @@ return (
         Click text to view code
       </p>
 
-      <div className="flex justify-center gap-x-20 gap-y-20 flex-wrap  items-start mt-6">
+      <div className="flex justify-center gap-x-20 gap-y-20 flex-wrap  items-start m-6 pb-10">
         {[
           { imageUrl: nature, code: codeExamples[0], note: notes[0] },
           {
@@ -103,7 +103,7 @@ return (
             <div
               className={`flex flex-col justify-center items-center border  ${
                 Theme ? "border-white" : "border-black"
-              }  rounded-md p-3`}
+              }  rounded-md p-3 sm:w-[42%] w-full `}
             >
               <p
                 className={`${
