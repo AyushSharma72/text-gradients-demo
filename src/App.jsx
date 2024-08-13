@@ -3,7 +3,7 @@ import TextImage from "./components/TextImages";
 import { Tabs } from "antd";
 import { Toaster } from "react-hot-toast";
 import { useTheme } from "./context/Theme";
-import Socials from "./socials";
+import Socials from "./Socials";
 function App() {
   const { TabPane } = Tabs;
   const { Theme, setTheme } = useTheme();
