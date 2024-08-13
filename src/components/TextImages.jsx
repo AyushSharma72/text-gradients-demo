@@ -14,37 +14,43 @@ const TextImages = () => {
     `import { TextImage } from "text-gradients";
 import nature from "../assets/nature.jpeg";
 
-return (
-  <TextImage imageUrl={nature}>
-    TEXT IMAGES
-  </TextImage>
-);`,
+export const Component = () => {
+  return (
+    <TextImage imageUrl={nature}>
+      TEXT IMAGES
+    </TextImage>
+  );
+};
+`,
     `import { TextImage } from "text-gradients";
 import lightning from "../assets/light.jpeg";
-
+export const Component = () => {
 return (
   <TextImage imageUrl={lightning} 
   cover={true}>
     TEXT IMAGES
   </TextImage>
-);`,
+);
+}`,
     `import { TextImage } from "text-gradients";
 import beach from "../assets/beach.jpeg";
-
+export const Component = () => {
 return (
   <TextImage imageUrl={beach} pos={"50%"}>
     TEXT IMAGES
   </TextImage>
-);`,
+);
+}`,
     `import { TextImage } from "text-gradients";
 import lake from "../assets/lake.jpeg";
-
+export const Component = () => {
 return (
   <TextImage imageUrl={lake} 
   pos={"50%"} cover={true}>
     TEXT IMAGES
   </TextImage>
-);`,
+);
+}`,
   ];
   const notes = [
     `Basic usage`,
