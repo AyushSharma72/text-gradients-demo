@@ -1,6 +1,6 @@
 import React from "react";
 import { Popover } from "antd";
-import { TextImage } from "text-gradients"; // Adjust the import path as necessary
+import TextImage from "./../../../package/src/components/TextImage";
 import lightning from "../assets/light.jpeg";
 import nature from "../assets/nature.jpeg";
 import beach from "../assets/beach.jpeg";

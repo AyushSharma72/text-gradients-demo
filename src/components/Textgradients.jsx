@@ -1,8 +1,8 @@
 import { Popover } from "antd";
 import toast from "react-hot-toast";
 import { FaCopy } from "react-icons/fa";
-import { GradientText } from "text-gradients";
 import { useTheme } from "../context/Theme";
+import GradientText from "./../../../package/src/components/GradientText";
 
 const Textgradients = () => {
   const { Theme } = useTheme();
@@ -16,31 +16,75 @@ const Textgradients = () => {
       toast.error("error in copying");
     }
   };
-
   const gradientTexts = [
-    { color: "purple", text: "Text Gradients(purple)" },
-    { color: "deepblue", text: "Text Gradients(deepblue)" },
-    { color: "lightgreen", text: "Text Gradients(lightgreen)" },
-    { color: "peach", text: "Text Gradients(peach)" },
-    { color: "yellow", text: "Text Gradients(yellow)" },
-    { color: "black", text: "Text Gradients(black)" },
-    { color: "lightpink", text: "Text Gradients(lightpink)" },
-    { color: "gray", text: "Text Gradients(gray)" },
-    { color: "magenta", text: "Text Gradients(magenta)" },
-    { color: "slate", text: "Text Gradients(slate)" },
-    { color: "darkgreen", text: "Text Gradients(darkgreen)" },
-    { color: "bluered", text: "Text Gradients(bluered)" },
-    { color: "lightpurple", text: "Text Gradients(lightpurple)" },
-    { color: "brightorange", text: "Text Gradients(brightorange)" },
-    { color: "red", text: "Text Gradients(red)" },
-    { color: "darkblue", text: "Text Gradients(darkblue)" },
-    { color: "cyan", text: "Text Gradients(cyan)" },
-    { color: "lightbluegreen", text: "Text Gradients(lightbluegreen)" },
-    { color: "ocean", text: "Text Gradients(ocean)" },
-    { color: "dimyellow", text: "Text Gradients(dimyellow)" },
-    { color: "bluepink", text: "Text Gradients(bluepink)" },
-    { color: "dashingblue", text: "Text Gradients(dashingblue)" },
+    { color: "purple", text: "Text Gradients(purple)", direction: "right" },
+    { color: "deepblue", text: "Text Gradients(deepblue)", direction: "left" },
+    {
+      color: "lightgreen",
+      text: "Text Gradients(lightgreen)",
+      direction: "top",
+    },
+    { color: "peach", text: "Text Gradients(peach)", direction: "top" },
+    { color: "yellow", text: "Text Gradients(yellow)", direction: "right" },
+    { color: "black", text: "Text Gradients(black)", direction: "right" },
+    {
+      color: "lightpink",
+      text: "Text Gradients(lightpink)",
+      direction: "left",
+    },
+    { color: "gray", text: "Text Gradients(gray)", direction: "left" },
+    { color: "magenta", text: "Text Gradients(magenta)", direction: "bottom" },
+    { color: "slate", text: "Text Gradients(slate)", direction: "bottom" },
+    {
+      color: "darkgreen",
+      text: "Text Gradients(darkgreen)",
+      direction: "right",
+    },
+    { color: "bluered", text: "Text Gradients(bluered)", direction: "right" },
+    {
+      color: "lightpurple",
+      text: "Text Gradients(lightpurple)",
+      direction: "left",
+    },
+    {
+      color: "brightorange",
+      text: "Text Gradients(brightorange)",
+      direction: "left",
+    },
+    { color: "red", text: "Text Gradients(red)", direction: "top" },
+    {
+      color: "darkblue",
+      text: "Text Gradients(darkblue)",
+      direction: "top",
+    },
+    { color: "cyan", text: "Text Gradients(cyan)", direction: "right" },
+    {
+      color: "lightbluegreen",
+      text: "Text Gradients(lightbluegreen)",
+      direction: "bottom left",
+    },
+    {
+      color: "ocean",
+      text: "Text Gradients(ocean)",
+      direction: "bottom right",
+    },
+    {
+      color: "dimyellow",
+      text: "Text Gradients(dimyellow)",
+      direction: "top left",
+    },
+    {
+      color: "bluepink",
+      text: "Text Gradients(bluepink)",
+      direction: "top right",
+    },
+    {
+      color: "dashingblue",
+      text: "Text Gradients(dashingblue)",
+      direction: "left",
+    },
   ];
+
   return (
     <>
       <div
@@ -52,7 +96,7 @@ const Textgradients = () => {
       </div>
 
       <div className="flex flex-wrap gap-8 justify-center  items-center pb-10">
-        {gradientTexts.map(({ color, text }) => (
+        {gradientTexts.map(({ color, text, direction }) => (
           <Popover
             key={color}
             trigger="click"
@@ -61,7 +105,7 @@ const Textgradients = () => {
                 <div
                   onClick={() =>
                     copyToClipboard(
-                      `<GradientText color="${color}">${text}</GradientText>`
+                      `<GradientText color="${color}" direction="${direction}">${text}</GradientText>`
                     )
                   }
                   style={{ cursor: "pointer" }}
@@ -69,13 +113,14 @@ const Textgradients = () => {
                 >
                   <FaCopy /> Copy Code
                 </div>
-                <div className="font-bold">{`<GradientText color="${color}">${text}</GradientText>`}</div>
+                <div className="font-bold">{`<GradientText color="${color}" direction="${direction}">${text}</GradientText>`}</div>
               </>
             }
           >
             <GradientText
-              className="text cursor-pointer text-center"
+              className="text cursor-pointer text-center "
               color={color}
+              direction={direction}
             >
               {text}
             </GradientText>
