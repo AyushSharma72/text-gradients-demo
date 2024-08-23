@@ -2,7 +2,7 @@ import { Popover } from "antd";
 import toast from "react-hot-toast";
 import { FaCopy } from "react-icons/fa";
 import { useTheme } from "../context/Theme";
-import GradientText from "./../../../package/src/components/GradientText";
+import {GradientText} from "text-gradients";
 
 const Textgradients = () => {
   const { Theme } = useTheme();
